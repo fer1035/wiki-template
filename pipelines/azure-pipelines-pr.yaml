@@ -1,0 +1,44 @@
+# Validation path filters:
+#   - /wiki/markdown/*.md
+#   - /wiki/docx/*.docx
+
+pr:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - /wiki/markdown/*.md
+      - /wiki/docx/*.docx
+
+trigger: none
+
+parameters:
+  - name: pool
+    type: object
+    default:
+      vmImage: ubuntu-latest
+
+resources:
+  repositories:
+  - repository: CCoE_pipeline_templates
+    type: github
+    name: emerson-enterprise-it/CCoE_pipeline_templates
+    ref: refs/heads/main
+    endpoint: CCoE_pipeline_templates
+  - repository: CCoE_documentations
+    type: github
+    name: emerson-enterprise-it/CCoE_documentations
+    ref: refs/heads/main
+    endpoint: CCoE_pipeline_templates
+
+extends:
+  template: wiki-dac/templates/pr.yaml@CCoE_pipeline_templates
+  parameters:
+    pool: ${{ parameters.pool }}
+    template_repo_name: CCoE_pipeline_templates
+    wiki_repo_name: CCoE_documentations
+
+    # Change these parameters to match your details.
+    repo_name: <repository_name>
+    team: <team_name>
