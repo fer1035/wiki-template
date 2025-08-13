@@ -18,23 +18,21 @@ parameters:
 
 resources:
   repositories:
-  - repository: CCoE_pipeline_templates
+  - repository: pipeline-templates
     type: github
-    name: emerson-enterprise-it/CCoE_pipeline_templates
+    name: fer1035/pipeline-templates
     ref: refs/heads/main
-    endpoint: CCoE_pipeline_templates
-  - repository: CCoE_documentations
+  - repository: documentation-site
     type: github
-    name: emerson-enterprise-it/CCoE_documentations
+    name:fer1035/documentation-site
     ref: refs/heads/main
-    endpoint: CCoE_pipeline_templates
 
 extends:
-  template: wiki-dac/templates/deploy.yaml@CCoE_pipeline_templates
+  template: wiki-dac/templates/deploy.yaml@pipeline-templates
   parameters:
     pool: ${{ parameters.pool }}
-    template_repo_name: CCoE_pipeline_templates
-    wiki_repo_name: CCoE_documentations
+    template_repo_name: pipeline-templates
+    wiki_repo_name: documentation-site
 
     # Change these parameters to match your details.
     repo_name: <repository_name>
