@@ -4,7 +4,7 @@
 
 ---Remove this line and the contents below---
 
-## CCoE-Wiki-Template
+## Wiki-Template
 
 Template repository to create wiki source repositories.
 
