@@ -1,17 +1,16 @@
 # \<Repository-Name>
 
-Emerson Cloud Center of Excellence  
 \<Team-name> team documentation wiki source
 
 ---Remove this line and the contents below---
 
 ## CCoE-Wiki-Template
 
-Template repository to create CCoE wiki source repositories.
+Template repository to create wiki source repositories.
 
 ## Steps
 
-To create a new CCoE Wiki repository:
+To create a new Wiki repository:
 
 - Select this repository as the template.
 - Customize the skeleton files once the new repository has been created using the standard Git workflow.
